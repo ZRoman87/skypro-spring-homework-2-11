@@ -1,0 +1,8 @@
+GET http://localhost:8080/store/order/add?id1=1001&id2=1002&id3=1003&id4=1004&id5=1005
+###
+GET http://localhost:8080/store/order/add?id1=1002
+###
+GET http://localhost:8080/store/order/add?id1=1003
+###
+GET http://localhost:8080/store/order/get
+###
