@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("/order")
@@ -20,14 +21,8 @@ public class OrderController {
     }
 
     @GetMapping(path = "/add")
-    public void add(@RequestParam(required = false) Integer id1,
-                    @RequestParam(required = false) Integer id2,
-                    @RequestParam(required = false) Integer id3,
-                    @RequestParam(required = false) Integer id4,
-                    @RequestParam(required = false) Integer id5
-    ) {
-        Integer[] id = {id1, id2, id3, id4, id5};
-        orderService.addProductToCart(id);
+    public void add(@RequestParam(required = false) List<Integer> ids) {
+        orderService.addProductToCart(ids);
     }
 
     @GetMapping(path = "/get")

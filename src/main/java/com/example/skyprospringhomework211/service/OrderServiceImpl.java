@@ -17,12 +17,12 @@ public class OrderServiceImpl implements OrderService {
     public List<Product> cart = new ArrayList<>(CAPACITY);
 
     @Override
-    public void addProductToCart(Integer... id) {
+    public void addProductToCart(List<Integer> ids) {
         int cnt = 0;
-        for (int i = 0; i < id.length-1; i++) {
+        for (int i = 0; i < ids.size(); i++) {
             try {
-                if (!id[i].equals(null)) {
-                    Product product = new Product(id[i]);
+                if (!ids.get(i).equals(null)) {
+                    Product product = new Product(ids.get(i));
                     cart.add(product);
                     cnt++;
                 }
