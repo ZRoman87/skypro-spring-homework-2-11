@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface OrderService {
 
-    void addProductToCart(Integer... id);
+    void addProductToCart(List<Integer> ids);
 
     List<Product> getProductsInCart();
 
